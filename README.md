@@ -8,7 +8,7 @@ To execute the project use the following tools
 Run the following command to boot an appropriate MySQL image for this Spring Boot project
 
 ```sh
-docker run --name <container_name> -e MYSQL_ROOT_PASSWORD=<password> -p <local_posrt>:3306 -d mysql:latest
+docker run --name <container_name> -e MYSQL_ROOT_PASSWORD=<password> -p <local_port>:3306 -d mysql:latest
 ```
 - <container_name> is the name that will be given to the MySQL container.
 - <password> is the password that will be used to access the MySQL server.
