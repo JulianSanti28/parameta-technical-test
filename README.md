@@ -11,8 +11,8 @@ Run the following command to boot an appropriate MySQL image for this Spring Boo
 docker run --name <container_name> -e MYSQL_ROOT_PASSWORD=<pw> -p <local_port>:3306 -d mysql:latest
 ```
 - <container_name> is the name that will be given to the MySQL container.
-- <pw> is the password that will be used to access the MySQL server.
 - <local_port> is the local port that will be mapped to port 3306 of the MySQL container, allowing access to the MySQL server from outside the container.
+- <pw> is the password that will be used to access the MySQL server.
     
 For this concrete example, use this command
     
