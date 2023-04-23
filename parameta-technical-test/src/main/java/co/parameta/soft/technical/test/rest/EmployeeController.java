@@ -15,7 +15,13 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("/employee")
 public class EmployeeController {
+
+    // ~ Dependencies
+    // ====================================================================
     private final IEmployeeService employeeService;
+
+    // ~ Dependency Injection
+    // ====================================================================
     public EmployeeController(IEmployeeService employeeService) {
         this.employeeService = employeeService;
     }

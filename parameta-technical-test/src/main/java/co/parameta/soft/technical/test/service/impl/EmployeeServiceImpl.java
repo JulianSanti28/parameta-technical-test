@@ -27,12 +27,13 @@ public class EmployeeServiceImpl implements IEmployeeService {
     private final IEmployeeRepository employeeRepository;
     private final IEmployeeMapper employeeMapper;
 
-    // ~ Dependence Injection
+    // ~ Dependency Injection
     // ====================================================================
     public EmployeeServiceImpl(final IEmployeeRepository employeeRepository, IEmployeeMapper employeeMapper) {
         this.employeeRepository = employeeRepository;
         this.employeeMapper = employeeMapper;
     }
+
     @Override
     public EmployeeDtoResponse saveEmployee(final EmployeeDtoRequest employeeDTORequest) {
         /*Business rules*/
@@ -48,6 +49,13 @@ public class EmployeeServiceImpl implements IEmployeeService {
         return employeeDtoResponse;
     }
 
+
+    /**
+     * Check if de input date is in a valid format
+     *
+     * @param dateStr the input date
+     * @return true if the format is invalid or false if the format is valid
+     */
     private boolean isInvalidDateFormat(final String dateStr) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         sdf.setLenient(false);
@@ -59,6 +67,13 @@ public class EmployeeServiceImpl implements IEmployeeService {
         }
     }
 
+
+    /**
+     * Calculate the period of time between the input date and current date
+     *
+     * @param birthdate the input date
+     * @return String format with years, months and days information
+     */
     private String calculateTimeDifference(Date birthdate) {
         LocalDate birthdateLocal = birthdate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         LocalDate today = LocalDate.now();
@@ -69,6 +84,13 @@ public class EmployeeServiceImpl implements IEmployeeService {
         return years + " años, " + months + " meses, y " + days + " días";
     }
 
+
+    /**
+     * Calculate the age from string input date
+     *
+     * @param birthdateStr the input date
+     * @return The current age
+     */
     private int calculateAge(final String birthdateStr) {
         /*Parse date*/
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
