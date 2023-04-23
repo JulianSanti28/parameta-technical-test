@@ -8,12 +8,18 @@ To execute the project use the following tools
 Run the following command to boot an appropriate MySQL image for this Spring Boot project
 
 ```sh
-docker run --name parameta-mysql -e MYSQL_ROOT_PASSWORD=parameta-pw -d -p 3306:3306 mysql:latest
+docker run --name <container_name> -e MYSQL_ROOT_PASSWORD=<password> -p <puerto_local>:3306 -d mysql:latest
 ```
 - <container_name> is the name that will be given to the MySQL container.
 - <password> is the password that will be used to access the MySQL server.
 - <local_port> is the local port that will be mapped to port 3306 of the MySQL container, allowing access to the MySQL server from outside the container.
-
+    
+For this concrete example, use this command
+    
+```sh
+docker run --name parameta-mysql -e MYSQL_ROOT_PASSWORD=parameta-pw -d -p 3306:3306 mysql:latest
+```
+    
 Create a MySQL client to create a database, follow the below command and provide your MySQL server password given in the above command
 
 ```sh
@@ -38,7 +44,7 @@ localhost:8081/api/v1/employee
 Localhost is just an example of the application host, modify this value according to your environment
 
 Send a request body in JSON format such as the following
-
+    
 ```sh
 {
     "names":"Julian",
@@ -51,7 +57,7 @@ Send a request body in JSON format such as the following
     "salary": 500
 }
 ```
-You should receive a response message like the following
+You should receive a response message like the following with status code 201
 
 ```sh
   {
