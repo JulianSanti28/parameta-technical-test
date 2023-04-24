@@ -152,7 +152,7 @@ You will receive a response like the following
 }
 ```
 
-Finally, try to break most of the business rules, for example:
+Try to break most of the business rules, for example:
 
 ```sh
 {
@@ -182,3 +182,4 @@ You will receive a response like the following
 ```
 As it can be identified, all business rules have been handled in an appropriate and clear way for the client. All HTTP request statuses have been handled, 400 for client errors and 201 for creating a resource
 
+Finally, Thank you!
