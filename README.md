@@ -25,7 +25,7 @@ Create a MySQL client to create a database, follow the below command and provide
 ```sh
 docker run -it --name mysql-client --link parameta-mysql:mysql --rm mysql:latest mysql -hmysql -uroot -p
 ```
-Create a table within this database with the following command
+Create a database within this database server with the following command
 
 ```sh
 CREATE DATABASE ParametaTechnicalTest;
